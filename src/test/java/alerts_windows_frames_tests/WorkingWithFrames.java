@@ -22,8 +22,8 @@ public class WorkingWithFrames extends ConfigSetup {
     }
 
     @Test
-    @DisplayName("взаимодействие с элементами внутри фрейма")
-    @Description("скрипт, в котором необходимо взаимодействовать с элементами внутри фрейма")
+    @DisplayName("Взаимодействие с элементами внутри фрейма")
+    @Description("Скрипт, в котором необходимо взаимодействовать с элементами внутри фрейма")
     public void workWithFramesElements() {
         clickFrame(driver);
 

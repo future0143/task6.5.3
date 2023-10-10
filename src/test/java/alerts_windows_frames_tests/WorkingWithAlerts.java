@@ -20,8 +20,8 @@ public class WorkingWithAlerts extends ConfigSetup {
     }
 
     @Test
-    @DisplayName("принятие уведомления")
-    @Description("открыть, прочитать и принять уведомление")
+    @DisplayName("Принятие уведомления")
+    @Description("Открыть, прочитать и принять уведомление")
     public void acceptAlert() {
         Alert alertJS = clickJSAlert(driver);
 
@@ -32,7 +32,7 @@ public class WorkingWithAlerts extends ConfigSetup {
     }
 
     @Test
-    @DisplayName("отклонить уведомление")
+    @DisplayName("Отклонить уведомление")
     @Description("Отказаться от алерта и проверить, что алерт закрылся")
     public void dismissAlert() {
         String text = "You successfully clicked an alert";
@@ -47,8 +47,8 @@ public class WorkingWithAlerts extends ConfigSetup {
     }
 
     @Test
-    @DisplayName("ввести текст в окне алерта")
-    @Description("ввести текст в окне алерта и проверить, что он появился на странице")
+    @DisplayName("Ввести текст в окне алерта")
+    @Description("Ввести текст в окне алерта и проверить, что он появился на странице")
     public void inputTextInAlert() {
         Alert alertJSPrompt = clickJSPrompt(driver);
 

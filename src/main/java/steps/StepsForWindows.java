@@ -8,6 +8,8 @@ import pages.ElementsOfPageWithWindows;
 
 import java.util.Set;
 
+import static validator.ValidationOfElements.validateElementByText;
+
 
 public class StepsForWindows extends ElementsOfPageWithWindows {
 
@@ -20,7 +22,6 @@ public class StepsForWindows extends ElementsOfPageWithWindows {
         for (String handle : handles) {
             if (!handle.equals(winHandleBefore)) {
                 driver.switchTo().window(handle);
-                waitTime(3000);
 
                 return driver.getCurrentUrl();
             }
@@ -41,11 +42,10 @@ public class StepsForWindows extends ElementsOfPageWithWindows {
         driver.switchTo().window(winHandleBefore);
     }
 
-    public static void waitTime(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    @Step(value = "Проверить текст на странице")
+    public static void checkTextOnPage(WebDriver driver) {
+        String textOnPage = findTextOnPage(driver);
+        String expectedText = "New Window";
+        validateElementByText(textOnPage, expectedText);
     }
 }

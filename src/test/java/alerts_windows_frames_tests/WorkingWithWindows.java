@@ -19,8 +19,8 @@ public class WorkingWithWindows extends ConfigSetup {
     }
 
     @Test
-    @DisplayName("переключение между окнами")
-    @Description("скрипт, который открывает новое окно или вкладку, переключается между ними и затем закрывает новое окно")
+    @DisplayName("Переключение между окнами")
+    @Description("Скрипт, который открывает новое окно или вкладку, переключается между ними и затем закрывает новое окно")
     public void scriptForWorkWithWindows() {
         String currentUrlBefore = driver.getCurrentUrl();
         String winHandleBefore = driver.getWindowHandle();
@@ -29,9 +29,7 @@ public class WorkingWithWindows extends ConfigSetup {
 
         checkTransitionToNewPage(currentUrlBefore, currentUrlNewWindow);
 
-        String textOnPage = findTextOnPage(driver);
-        String expectedText = "New Window";
-        validateElementByText(textOnPage, expectedText);
+        checkTextOnPage(driver);
 
         closeNewWindow(driver, winHandleBefore);
 

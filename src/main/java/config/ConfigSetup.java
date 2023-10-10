@@ -18,8 +18,8 @@ public class ConfigSetup {
 
     public void openBrowser(String url) {
         driver = new ChromeDriver();
-        driver.get(url);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get(url);
     }
 
     @AfterEach
